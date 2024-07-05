@@ -314,3 +314,118 @@ java.lang.InterruptedException
 
 !ENTRY org.springframework.tooling.boot.ls 1 0 2024-07-05 14:23:52.646
 !MESSAGE Classpath changed for project: Product
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-07-05 22:17:47.059
+!MESSAGE Classpath changed for project: Inventory
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 4 0 2024-07-05 22:17:47.064
+!MESSAGE <project root> [in Inventory] is not on its project's build path
+!STACK 1
+Java Model Exception: Error in Java Model (code 1006): <project root> [in Inventory] is not on its project's build path
+	at org.eclipse.jdt.internal.core.JavaElement.newJavaModelException(JavaElement.java:572)
+	at org.eclipse.jdt.internal.core.Openable.generateInfos(Openable.java:233)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:585)
+	at org.eclipse.jdt.internal.core.JavaElement.getElementInfo(JavaElement.java:308)
+	at org.eclipse.jdt.internal.core.JavaElement.getElementInfo(JavaElement.java:294)
+	at org.eclipse.jdt.internal.core.JavaElement.getChildren(JavaElement.java:249)
+	at org.springframework.tooling.jdt.ls.commons.classpath.ClasspathUtil.createCpes(ClasspathUtil.java:150)
+	at org.springframework.tooling.jdt.ls.commons.classpath.ClasspathUtil.resolve(ClasspathUtil.java:94)
+	at org.springframework.tooling.jdt.ls.commons.classpath.SendClasspathNotificationsJob.run(SendClasspathNotificationsJob.java:130)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1006 2024-07-05 22:17:47.067
+!MESSAGE <project root> [in Inventory] is not on its project's build path
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-07-05 22:17:48.628
+!MESSAGE Classpath changed for project: Inventory
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-07-05 22:17:48.630
+!MESSAGE Boot project ADDED: Inventory
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-07-05 22:17:50.050
+!MESSAGE Classpath changed for project: Inventory
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-07-05 22:18:36.401
+!MESSAGE Classpath changed for project: Inventory
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-07-05 22:18:36.406
+!MESSAGE Boot project REMOVED: Inventory
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-07-05 22:19:15.411
+!MESSAGE Classpath changed for project: Inventory
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-07-05 22:19:17.004
+!MESSAGE Classpath changed for project: Inventory
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-07-05 22:19:17.006
+!MESSAGE Boot project ADDED: Inventory
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-07-05 22:19:17.628
+!MESSAGE Classpath changed for project: Inventory
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-07-05 22:19:53.466
+!MESSAGE Classpath changed for project: Inventory
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-07-05 22:19:53.806
+!MESSAGE Classpath changed for project: Inventory
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-07-05 22:20:31.738
+!MESSAGE Classpath changed for project: Inventory
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-07-05 22:20:31.749
+!MESSAGE Boot project REMOVED: Inventory
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 4 0 2024-07-05 22:20:31.754
+!MESSAGE Failed to refresh Code Minings for editor.
+!STACK 1
+Java Model Exception: Error in Java Model (code 969): Inventory does not exist
+	at org.eclipse.jdt.internal.core.JavaElement.newNotPresentException(JavaElement.java:562)
+	at org.eclipse.jdt.internal.core.JavaModelManager.getPerProjectInfoCheckExistence(JavaModelManager.java:2631)
+	at org.eclipse.jdt.internal.core.JavaProject.getPerProjectInfo(JavaProject.java:2361)
+	at org.eclipse.jdt.internal.core.JavaProject.getRawClasspath(JavaProject.java:2404)
+	at org.springframework.tooling.ls.eclipse.commons.STS4LanguageClientImpl.lambda$9(STS4LanguageClientImpl.java:429)
+	at org.springframework.tooling.jdt.ls.commons.classpath.ReusableClasspathListenerHandler$CallbackJob.lambda$0(ReusableClasspathListenerHandler.java:76)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.tooling.jdt.ls.commons.classpath.ReusableClasspathListenerHandler$CallbackJob.run(ReusableClasspathListenerHandler.java:76)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 org.eclipse.jdt.core 4 969 2024-07-05 22:20:31.754
+!MESSAGE Inventory does not exist
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 4 0 2024-07-05 22:20:31.758
+!MESSAGE Failed to refresh Code Minings for editor.
+!STACK 1
+Java Model Exception: Error in Java Model (code 969): Inventory does not exist
+	at org.eclipse.jdt.internal.core.JavaElement.newNotPresentException(JavaElement.java:562)
+	at org.eclipse.jdt.internal.core.JavaModelManager.getPerProjectInfoCheckExistence(JavaModelManager.java:2631)
+	at org.eclipse.jdt.internal.core.JavaProject.getPerProjectInfo(JavaProject.java:2361)
+	at org.eclipse.jdt.internal.core.JavaProject.getRawClasspath(JavaProject.java:2404)
+	at org.springframework.tooling.ls.eclipse.commons.STS4LanguageClientImpl.lambda$9(STS4LanguageClientImpl.java:429)
+	at org.springframework.tooling.jdt.ls.commons.classpath.ReusableClasspathListenerHandler$CallbackJob.lambda$0(ReusableClasspathListenerHandler.java:76)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.tooling.jdt.ls.commons.classpath.ReusableClasspathListenerHandler$CallbackJob.run(ReusableClasspathListenerHandler.java:76)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 org.eclipse.jdt.core 4 969 2024-07-05 22:20:31.758
+!MESSAGE Inventory does not exist
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-07-05 22:22:31.179
+!MESSAGE Classpath changed for project: Inventory
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-07-05 22:22:31.182
+!MESSAGE Boot project ADDED: Inventory
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-07-05 22:22:32.844
+!MESSAGE Classpath changed for project: Inventory
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-07-05 22:22:33.245
+!MESSAGE Classpath changed for project: Inventory
+
+!ENTRY org.eclipse.lsp4e 2 0 2024-07-05 23:16:33.229
+!MESSAGE Javadoc unavailable. Failed to obtain it.
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:386)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:65)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
