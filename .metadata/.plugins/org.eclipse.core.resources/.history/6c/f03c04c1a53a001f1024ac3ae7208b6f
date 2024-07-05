@@ -1,0 +1,44 @@
+package com.ecommerce.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.ecommerce.entity.CustomerAddress;
+import com.ecommerce.service.CustomerAddressService;
+
+@RestController
+@RequestMapping("/customerAddresses")
+public class CustomerAddressController {
+
+    @Autowired
+    private CustomerAddressService customerAddressService;
+
+    @PostMapping
+    public CustomerAddress addCustomerAddress(@RequestBody CustomerAddress customerAddress) {
+        return customerAddressService.addCustomerAddress(customerAddress);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteCustomerAddress(@PathVariable int id) {
+        customerAddressService.deleteCustomerAddress(id);
+    }
+
+    @PutMapping("/{id}")
+    public CustomerAddress updateCustomerAddress(@PathVariable int id, @RequestBody CustomerAddress customerAddress) {
+        return customerAddressService.updateCustomerAddress(id, customerAddress);
+    }
+
+    @GetMapping
+    public List<CustomerAddress> searchCustomerAddress() {
+        return customerAddressService.searchCustomerAddress();
+    }
+}

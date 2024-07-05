@@ -1,0 +1,57 @@
+package com.ecommerce.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.ecommerce.entity.Customer;
+import com.ecommerce.entity.CustomerAddress;
+import com.ecommerce.exception.CustomerNotFoundException;
+import com.ecommerce.repo.CustomerAddressRepository;
+import com.ecommerce.repo.CustomerRepository;
+
+@Service
+public class CustomerAddressServiceImpl implements CustomerAddressService {
+
+    @Autowired
+    private CustomerAddressRepository customerAddressRepository;
+    
+    @Autowired
+    private CustomerRepository customerRepository;
+
+    @Override
+    public CustomerAddress addCustomerAddress(CustomerAddress customerAddress) {
+        return customerAddressRepository.save(customerAddress);
+    }
+
+    @Override
+    public void deleteCustomerAddress(int addressId) {
+        customerAddressRepository.deleteById(addressId);
+    }
+
+    @Override
+    public CustomerAddress updateCustomerAddress(int addressId, CustomerAddress customerAddress) {
+        if (customerAddressRepository.existsById(addressId)) {
+            customerAddress.setId(addressId);
+            return customerAddressRepository.save(customerAddress);
+        } else {
+            throw new RuntimeException("Customer Address not found");
+        }
+    }
+
+  1``
+	
+	@Override
+    public CustomerAddress getCustomerBillingAddress(int customerId) {
+        Customer customer = customerRepository.findById(customerId)
+                .orElseThrow(() -> new CustomerNotFoundException("Customer not found with id: " + customerId));
+        return customer.getCustomerBillingAddress();
+    }
+
+    @Override
+    public CustomerAddress getCustomerShippingAddress(int customerId) {
+        Customer customer = customerRepository.findById(customerId)
+                .orElseThrow(() -> new CustomerNotFoundException("Customer not found with id: " + customerId));
+        return customer.getCustomerShippingAddress();
+    }
+	
+}

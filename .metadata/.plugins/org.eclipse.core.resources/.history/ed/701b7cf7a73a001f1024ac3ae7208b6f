@@ -1,0 +1,12 @@
+package com.ecommerce.service;
+
+import java.util.List;
+
+import com.ecommerce.entity.CustomerAddress;
+
+public interface CustomerAddressService {
+    CustomerAddress addCustomerAddress(CustomerAddress customerAddress);
+    void deleteCustomerAddress(int addressId);
+    CustomerAddress updateCustomerAddress(int addressId, CustomerAddress customerAddress);
+    CustomerAddress searchCustomerAddress(int customerId);
+}

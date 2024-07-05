@@ -1,0 +1,53 @@
+package com.ecommerce.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.ecommerce.entity.CustomerAddress;
+import com.ecommerce.repo.CustomerAddressRepository;
+import com.ecommerce.repo.CustomerRepository;
+
+@Service
+public class CustomerAddressServiceImpl implements CustomerAddressService {
+
+    @Autowired
+    private CustomerAddressRepository customerAddressRepository;
+    
+    @Autowired
+    private CustomerRepository customerRepository;
+
+    @Override
+    public CustomerAddress addCustomerAddress(CustomerAddress customerAddress) {
+        return customerAddressRepository.save(customerAddress);
+    }
+
+    @Override
+    public void deleteCustomerAddress(int addressId) {
+        customerAddressRepository.deleteById(addressId);
+    }
+
+    @Override
+    public CustomerAddress updateCustomerAddress(int addressId, CustomerAddress customerAddress) {
+        if (customerAddressRepository.existsById(addressId)) {
+            customerAddress.setId(addressId);
+            return customerAddressRepository.save(customerAddress);
+        } else {
+            throw new RuntimeException("Customer Address not found");
+        }
+    }
+
+   
+
+
+	@Override
+	public CustomerAddress searchCustomerAddress(int customerId) {
+		// TODO Auto-generated method stub
+		
+		return ;
+	}
+	
+	
+	
+}

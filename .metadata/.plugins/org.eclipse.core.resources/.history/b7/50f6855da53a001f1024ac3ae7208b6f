@@ -1,0 +1,45 @@
+package com.ecommerce.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.ecommerce.entity.Customer;
+import com.ecommerce.exception.CustomerNotFoundException;
+import com.ecommerce.repo.CustomerRepository;
+
+@Service
+public class CustomerServiceImpl implements CustomerService {
+
+    @Autowired
+    private CustomerRepository customerRepository;
+
+    @Override
+    public Customer addCustomer(Customer customer) {
+    	
+        return customerRepository.save(customer);
+    }
+
+    @Override
+    public void deleteCustomer(int customerId) {
+    	 if (!customerRepository.existsById(customerId)) {
+             throw new CustomerNotFoundException("Customer not found with id: " + customerId);
+         }
+        customerRepository.deleteById(customerId);
+    }
+
+    @Override
+    public Customer updateCustomer(int customerId, Customer customer) {
+        if (customerRepository.existsById(customerId)) {
+            customer.setCustomerId(customerId);
+            return customerRepository.save(customer);
+        } else {
+            throw new RuntimeException("Customer not found");
+        }
+    }
+
+    @Override
+    public Customer searchCustomer(int customerId) {
+    	
+        return customerRepository.findById(customerId).get();
+    }
+}

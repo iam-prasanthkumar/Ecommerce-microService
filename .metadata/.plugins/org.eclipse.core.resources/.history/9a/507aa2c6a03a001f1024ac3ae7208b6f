@@ -1,0 +1,28 @@
+package com.ecommerce.entity;
+
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import javax.persistence.*;
+import java.util.Set;
+
+@Entity
+@Data
+@NoArgsConstructor
+public class Customer {
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int customerId;
+    
+    private String customerName;
+    private String customerEmail;
+    
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "billing_address_id", referencedColumnName = "id")
+    private CustomerAddress customerBillingAddress;
+    
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "shipping_address_id", referencedColumnName = "id")
+    private CustomerAddress customerShippingAddress;
+}
+

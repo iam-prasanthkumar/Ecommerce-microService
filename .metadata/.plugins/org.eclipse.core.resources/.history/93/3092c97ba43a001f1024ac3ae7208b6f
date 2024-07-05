@@ -1,0 +1,51 @@
+package com.ecommerce.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.ecommerce.entity.Customer;
+import com.ecommerce.service.CustomerService;
+
+@RestController
+@RequestMapping("/api")
+public class CustomerController {
+
+    @Autowired
+    private CustomerService customerService;
+
+    @PostMapping("/addCustomer")
+    public ResponseEntity<Customer> addCustomer(@RequestBody Customer customerdetails) {
+    	
+    	Customer savedCustomer = customerService.addCustomer(customerdetails);
+        return new ResponseEntity<>(savedCustomer, HttpStatus.CREATED);
+    }
+
+    @DeleteMapping("/deletete/{cutomerid}")
+    public ResponseEntity<Void> deleteCustomer(@PathVariable int cutomerid) {
+    	 customerService.deleteCustomer(cutomerid);
+         return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @PutMapping("/updateCustomer/{cutomerid}")
+    public ResponseEntity<Customer> updateCustomer(@PathVariable int cutomerid, @RequestBody Customer customer) {
+    	  Customer updatedCustomer = customerService.updateCustomer(cutomerid, customer);
+          return new ResponseEntity<>(updatedCustomer, HttpStatus.OK);
+    }
+
+    @GetMapping("/serachCustomer/{cutomerid}")
+    public ResponseEntity<Customer> searchCustomer(@PathVariable int cutomerid) {
+       customerService.searchCustomer(cutomerid);
+       return new Resp
+    }
+}
